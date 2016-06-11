@@ -1,11 +1,10 @@
 var express = require('express');
 var app = express();
-var path = require('path');
 var multer = require('multer');
 var upload = multer({ dest: 'uploads/' })
 
 app.get('/', function(req,res){
-	res.sendFile(path.join(__dirname + '/index.html'));
+	res.sendFile(__dirname + '/index.html');
 });
 
 app.post('/api/fileanalyse/', upload.single('0'), function(req, res){
